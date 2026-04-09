@@ -89,6 +89,10 @@ st.markdown("""
     border-radius: 8px;
     padding: 0.8rem 1rem;
     margin: 0.4rem 0;
+    color: #1a1a1a !important;
+}
+.doctor-card b {
+    color: #1a5276 !important;
 }
 div[data-testid="column"] .stButton > button {
     width: 100%;
@@ -385,9 +389,9 @@ elif st.session_state.screen == "route":
         svc = next((s for s in SERVICES if s["name"] == svc_name), None)
         if svc:
             st.markdown(f"""
-<div class='card'>
-<b>{svc['name']}</b> - <span class='price-tag'>{svc['price']:,} руб.</span><br>
-<span style='color:#555;font-size:0.9rem'>{svc['description']}</span>
+<div class='card' style='color:#1a1a1a'>
+<b style='color:#1a5276'>{svc['name']}</b> - <span class='price-tag'>{svc['price']:,} руб.</span><br>
+<span style='color:#444;font-size:0.9rem'>{svc['description']}</span>
 </div>
 """, unsafe_allow_html=True)
 
