@@ -260,11 +260,12 @@ elif st.session_state.screen == "urgent":
     st.markdown(f"### 📞 {CONTACTS['phone']}")
     st.markdown(f"⏰ Работаем {CONTACTS['hours']}")
 
-    c1, c2 = st.columns(2)
-    with c1:
-        st.link_button("📞 Позвонить", f"tel:{CONTACTS['phone']}", use_container_width=True)
-    with c2:
-        st.link_button("💬 WhatsApp", CONTACTS["whatsapp"], use_container_width=True)
+    st.markdown(f"""
+<div style='display:flex;gap:10px;margin-top:10px'>
+<a href='tel:{CONTACTS["phone"]}' style='flex:1;text-align:center;padding:10px;background:#1a5276;color:white;border-radius:8px;text-decoration:none;font-weight:600'>📞 Позвонить</a>
+<a href='{CONTACTS["whatsapp"]}' style='flex:1;text-align:center;padding:10px;background:#25d366;color:white;border-radius:8px;text-decoration:none;font-weight:600'>💬 WhatsApp</a>
+</div>
+""", unsafe_allow_html=True)
 
     st.markdown("<hr>", unsafe_allow_html=True)
     if st.button("← Вернуться в начало"):
@@ -519,13 +520,13 @@ elif st.session_state.screen == "confirm":
     st.markdown("<hr>", unsafe_allow_html=True)
     st.markdown("**Если нужна срочная связь:**")
 
-    c1, c2, c3 = st.columns(3)
-    with c1:
-        st.link_button("📞 Позвонить", f"tel:{CONTACTS['phone']}", use_container_width=True)
-    with c2:
-        st.link_button("💬 WhatsApp", CONTACTS["whatsapp"], use_container_width=True)
-    with c3:
-        st.link_button("✈️ Telegram", CONTACTS["telegram"], use_container_width=True)
+    st.markdown(f"""
+<div style='display:flex;gap:8px;margin-top:10px;flex-wrap:wrap'>
+<a href='tel:{CONTACTS["phone"]}' style='flex:1;min-width:120px;text-align:center;padding:10px;background:#1a5276;color:white;border-radius:8px;text-decoration:none;font-weight:600'>📞 Позвонить</a>
+<a href='{CONTACTS["whatsapp"]}' style='flex:1;min-width:120px;text-align:center;padding:10px;background:#25d366;color:white;border-radius:8px;text-decoration:none;font-weight:600'>💬 WhatsApp</a>
+<a href='{CONTACTS["telegram"]}' style='flex:1;min-width:120px;text-align:center;padding:10px;background:#0088cc;color:white;border-radius:8px;text-decoration:none;font-weight:600'>✈️ Telegram</a>
+</div>
+""", unsafe_allow_html=True)
 
     st.markdown("<hr>", unsafe_allow_html=True)
     if st.button("🔄 Новая заявка", use_container_width=True):
