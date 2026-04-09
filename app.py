@@ -39,6 +39,16 @@ st.markdown("""
     margin: auto;
     padding-top: 1.5rem;
 }
+
+/* Глобальный фикс для тёмной темы */
+.stMarkdown, .stMarkdown p, .stMarkdown div,
+[data-testid="stMarkdownContainer"] p,
+[data-testid="stMarkdownContainer"] div {
+    color: #1a1a1a !important;
+}
+div[class*="card"] * {
+    color: #1a1a1a !important;
+}
 .clinic-header {
     text-align: center;
     padding: 1rem 0 0.5rem;
@@ -59,6 +69,7 @@ st.markdown("""
     padding: 1rem 1.2rem;
     margin: 0.6rem 0;
     border-left: 4px solid #1a5276;
+    color: #1a1a1a !important;
 }
 .urgent-card {
     background: #fff0f0;
@@ -66,6 +77,7 @@ st.markdown("""
     padding: 1rem 1.2rem;
     margin: 0.6rem 0;
     border-left: 4px solid #c0392b;
+    color: #1a1a1a !important;
 }
 .success-card {
     background: #eafaf1;
@@ -73,6 +85,7 @@ st.markdown("""
     padding: 1rem 1.2rem;
     margin: 0.6rem 0;
     border-left: 4px solid #27ae60;
+    color: #1a1a1a !important;
 }
 .price-tag {
     font-size: 1.1rem;
