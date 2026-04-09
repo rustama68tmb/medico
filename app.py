@@ -40,14 +40,24 @@ st.markdown("""
     padding-top: 1.5rem;
 }
 
-/* Глобальный фикс для тёмной темы */
-.stMarkdown, .stMarkdown p, .stMarkdown div,
-[data-testid="stMarkdownContainer"] p,
-[data-testid="stMarkdownContainer"] div {
+/* Принудительно светлая тема */
+.stApp, [data-testid="stAppViewContainer"], [data-testid="stMain"] {
+    background-color: #ffffff !important;
     color: #1a1a1a !important;
 }
-div[class*="card"] * {
+.stMarkdown, .stMarkdown p, .stMarkdown div, .stMarkdown b, .stMarkdown span,
+[data-testid="stMarkdownContainer"],
+[data-testid="stMarkdownContainer"] p,
+[data-testid="stMarkdownContainer"] b,
+[data-testid="stMarkdownContainer"] span {
     color: #1a1a1a !important;
+}
+h1, h2, h3, h4, label {
+    color: #1a1a1a !important;
+}
+.stButton > button {
+    color: #1a1a1a !important;
+    background-color: #f0f2f6 !important;
 }
 .clinic-header {
     text-align: center;
